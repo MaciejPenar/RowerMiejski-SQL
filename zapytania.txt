@@ -1,0 +1,8 @@
+1.	Sk¹d wiadomo, ¿e rower jest wypo¿yczony lub wolny
+SELECT r.id_roweru, w.id_wypozyczenia, w.stacja_wyp, w.godz_wyp, w.godz_zwrotu FROM Wypozyczenie w JOIN ROWER r ON r.id_roweru=w.id_roweru WHERE godz_zwrotu is null
+
+2.	Ile rowerów jest dostêpnych na stacji nr 1
+SELECT sr.id_roweru, r.status From STACJA_ROWERU sr JOIN ROWER r ON sr.id_roweru=r.id_roweru WHERE sr.id_stacji = 1 AND r.status='wolny'
+
+3.	Imiona u¿ytkowników którzy wypo¿yczyli rower typu 'miejski'
+Select u.imie, r.typ From UZYTKOWNIK u JOIN WYPOZYCZENIE w ON u.id_uzytkownika=w.id_uzytkownika JOIN ROWER r ON r.id_roweru=w.id_roweru Where r.typ='miejski'

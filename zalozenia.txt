@@ -1,0 +1,3 @@
+- Okreœlenie iloœci dostêpnych rowerów na konkretnej stacji
+- Rejestrowanie wypo¿yczeñ i zwrotów rowerów
+- Mo¿liwoœæ zwracania rowerów na dowolnej stacji

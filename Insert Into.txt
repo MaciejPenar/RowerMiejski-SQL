@@ -1,0 +1,32 @@
+INSERT INTO UZYTKOWNIK VALUES (1, 'Mac', 'Maciej', 'Penar', 'mac@wp.pl', 123456, '05/12/2019', '');
+INSERT INTO UZYTKOWNIK VALUES (2, 'jan', 'Jan', 'Nowak', 'nowak@wp.pl', 123456789, '06/12/2019', '');
+INSERT INTO UZYTKOWNIK VALUES (3, 'Adam', 'Adam', 'Malysz', 'adam@wp.pl', 453256, '05/12/2019', '');
+
+INSERT INTO ROWER VALUES (1,'miejski','wolny');
+INSERT INTO ROWER VALUES (2,'szosowy','wolny');
+INSERT INTO ROWER VALUES (3,'elektryczny','zajety');
+
+INSERT INTO STACJA VALUES (1,30,'ursynow','dluga 5');
+INSERT INTO STACJA VALUES (2,50,'mokotow','zielona 11');
+
+INSERT INTO STACJA_ROWERU VALUES (1,2,'04/12/2019')
+INSERT INTO STACJA_ROWERU VALUES (1,3,'06/12/2019')
+INSERT INTO STACJA_ROWERU VALUES (2,1,'05/12/2019')
+
+INSERT INTO CENA VALUES (1, 5)
+INSERT INTO CENA VALUES (2, 2)
+
+INSERT INTO WYPOZYCZENIE (id_wypozyczenia, id_uzytkownika, id_roweru, stacja_wyp, godz_wyp, id_ceny)
+VALUES (1,1,1,1,'16:55',1)
+
+INSERT INTO WYPOZYCZENIE (id_wypozyczenia, id_uzytkownika, id_roweru, stacja_wyp, godz_wyp, stacja_zwrotu, godz_zwrotu, id_ceny)
+VALUES (2,1,1,1,'16:55',1,'17:15',1)
+
+INSERT INTO WYPOZYCZENIE (id_wypozyczenia, id_uzytkownika, id_roweru, stacja_wyp, godz_wyp, id_ceny)
+VALUES (3,2,1,1,'17:55',1)
+
+INSERT INTO WYPOZYCZENIE (id_wypozyczenia, id_uzytkownika, id_roweru, stacja_wyp, godz_wyp, id_ceny)
+VALUES (4,3,2,1,'18:55',1)
+
+INSERT INTO WYPOZYCZENIE (id_wypozyczenia, id_uzytkownika, id_roweru, stacja_wyp, godz_wyp, id_ceny)
+VALUES (5,3,3,1,'19:55',1)

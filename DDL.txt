@@ -1,0 +1,52 @@
+CREATE TABLE UZYTKOWNIK
+(
+id_uzytkownika int PRIMARY KEY,
+login varchar(25) UNIQUE NOT NULL,
+imie varchar(25) not null,
+nazwisko varchar(25) not null,
+email varchar(40) unique not null,
+nr_tel int not null,
+data_rejestracji datetime not null,
+saldo_konta money not null default 0
+);
+
+Create table CENA 
+(
+id_ceny int primary key,
+cena_za_min money not null
+);
+
+Create table ROWER
+(
+id_roweru int primary key,
+typ varchar(25) not null,
+status varchar(25) default 'wolny'
+CONSTRAINT ck_status_roweru CHECK (status in('wolny','zajety'))
+);
+
+Create table STACJA
+(
+id_stacji int primary key,
+miejsca int not null,
+osiedle varchar(40),
+ulica varchar(40)
+);
+
+Create table WYPOZYCZENIE
+(
+id_wypozyczenia int primary key,
+id_uzytkownika int REFERENCES UZYTKOWNIK(id_uzytkownika),
+id_roweru int REFERENCES ROWER(id_roweru),
+stacja_wyp int REFERENCES STACJA(id_stacji),
+godz_wyp datetime not null,
+stacja_zwrotu int REFERENCES STACJA(id_stacji),
+godz_zwrotu datetime,
+id_ceny int REFERENCES CENA(id_ceny),
+);
+
+Create table STACJA_ROWERU
+(
+id_stacji int REFERENCES STACJA(id_stacji),
+id_roweru int REFERENCES ROWER(id_roweru),
+data_dodania datetime
+);
